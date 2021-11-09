@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="0.9166667"
+      android:scaleY="0.9166667"
+      android:translateX="9.083333"
+      android:translateY="6.3333335">
+      <!-- cabeça -->
+      <path
+          android:strokeColor="#00CED1"
+          android:strokeWidth="1"
+          android:pathData="M44,68a22,10 0 0,1 0,-20" />
+      <!-- olho -->
+      <path
+          android:fillColor="#00CED1"
+          android:pathData="M34,58a2,2 0 0,1 0,-4a2,2 0 0,1 0,4z" />
+      <!-- cauda -->
+      <path
+          android:strokeColor="#00CED1"
+          android:strokeWidth="1"
+          android:pathData="M54,68q15,-5 22,-20M54,48q15,5 22,20" />
+      <!-- números -->
+      <path
+          android:strokeColor="#00CED1"
+          android:strokeWidth="0.5"
+          android:pathData="M38,40v-8l-2,2
+          M44,40a2,4 0 0,1 0,-8
+          M54,40a2,4 0 1,0 0,-8
+          M60,40a2,4 0 0,1 0,-8a2,4 0 0,1 0,8" />
+      <!-- raio -->
+      <path
+          android:strokeColor="#00CED1"
+          android:strokeWidth="0.5"
+          android:pathData="M52,16l-6,8h6l-6,8h6l-6,8h6l-6,8h6l-6,8h6l-6,8h6l-6,8h6l-6,8h6l-6,8" />
+  </group>
+</vector>
