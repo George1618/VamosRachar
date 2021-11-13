@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">Vamos Rachar</string>
+    <string name="app_name">Vamos Rachar!</string>
+    <string name="money">Valor total</string>
+    <string name="people">Quantidade de pessoas</string>
+    <string name="value">Valor dividido</string>
     <string name="RS">R$</string>
+    <string name="no_money">R$ 0,00</string>
+    <string name="zero_decimal">0,00</string>
+    <string name="two">2</string>
+    <string name="share">Compartilhar valor</string>
+    <string name="speak">Escutar valor</string>
 </resources>
