@@ -7,6 +7,12 @@
     <string name="no_money">R$ 0,00</string>
     <string name="zero_decimal">0,00</string>
     <string name="two">2</string>
+    <string name="error">Deve haver ao menos 1 pessoa!</string>
+    <string name="extra">A conta dividida é de</string>
     <string name="share">Compartilhar valor</string>
     <string name="speak">Escutar valor</string>
+    <string name="speaking">O valor individual é de</string>
+    <string name="success">TTS iniciado com sucesso</string>
+    <string name="fail">Falha ao iniciar TTS</string>
+    <string name="media">Enviar ou salvar valor dividido por:</string>
 </resources>
