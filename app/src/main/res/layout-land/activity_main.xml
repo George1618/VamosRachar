@@ -81,12 +81,13 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="45dp"
         android:text="@string/no_money"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantity" />
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@+id/total"
+        app:layout_constraintTop_toBottomOf="@+id/title_top" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/share"
@@ -101,7 +102,7 @@
         app:fabCustomSize="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/quantity"
         app:layout_constraintTop_toBottomOf="@+id/result"
         app:maxImageSize="60dp"
         app:srcCompat="@drawable/ic_share" />

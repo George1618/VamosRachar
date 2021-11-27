@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Split the Bill!</string>
+    <string name="money">Total Value</string>
+    <string name="people">Number of People</string>
+    <string name="value">Split Value</string>
+    <string name="RS">$</string>
+    <string name="no_money">$ 0.00</string>
+    <string name="zero_decimal">0.00</string>
+    <string name="two">2</string>
+    <string name="error">There must be at least 1 person!</string>
+    <string name="extra">The bill\'s split value is</string>
+    <string name="share">Share the value</string>
+    <string name="speak">Listen to the value</string>
+    <string name="speaking">The individual value is</string>
+    <string name="success">TTS successfully started</string>
+    <string name="fail">Failed to start TTS</string>
+    <string name="media">Send or save split value by:</string>
+</resources>
