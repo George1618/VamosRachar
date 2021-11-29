@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.VamosRachar">
+
+    <TextView
+        android:id="@+id/title_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:importantForAccessibility="no"
+        android:text="@string/app_name"
+        android:textSize="100sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/money"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/money"
+        android:theme="@style/InputImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_top"
+        app:srcCompat="@drawable/ic_money" />
+
+    <ImageView
+        android:id="@+id/people"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/people"
+        android:theme="@style/InputImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/money"
+        app:srcCompat="@drawable/ic_people" />
+
+    <EditText
+        android:id="@+id/total"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="125dp"
+        android:width="200dp"
+        android:autofillHints="money"
+        android:digits="0123456789.,"
+        android:ems="10"
+        android:hint="@string/zero_decimal"
+        android:inputType="numberDecimal"
+        android:maxLength="12"
+        android:minHeight="48dp"
+        android:textSize="60sp"
+        android:theme="@style/InputText"
+        app:layout_constraintStart_toEndOf="@+id/money"
+        app:layout_constraintTop_toBottomOf="@+id/title_top" />
+
+    <EditText
+        android:id="@+id/quantity"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="195dp"
+        android:width="200dp"
+        android:autofillHints="quantity"
+        android:ems="10"
+        android:hint="@string/two"
+        android:inputType="number"
+        android:maxLength="12"
+        android:minHeight="48dp"
+        android:textSize="60sp"
+        android:theme="@style/InputText"
+        app:layout_constraintStart_toEndOf="@+id/people"
+        app:layout_constraintTop_toBottomOf="@+id/total" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:text="@string/no_money"
+        android:textSize="100sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/total"
+        app:layout_constraintTop_toBottomOf="@+id/title_top" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:clickable="true"
+        android:contentDescription="@string/share"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:theme="@style/ButtonImage"
+        app:fabCustomSize="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/quantity"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:maxImageSize="160dp"
+        app:srcCompat="@drawable/ic_share" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/speak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:clickable="true"
+        android:contentDescription="@string/speak"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:theme="@style/ButtonImage"
+        app:fabCustomSize="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/share"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:maxImageSize="160dp"
+        app:srcCompat="@drawable/ic_speak" />
+</androidx.constraintlayout.widget.ConstraintLayout>
