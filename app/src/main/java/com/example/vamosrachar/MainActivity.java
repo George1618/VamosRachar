@@ -18,15 +18,15 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements TextWatcher, TextToSpeech.OnInitListener {
 
-    EditText total, quantity;
-    TextView result;
-    FloatingActionButton share, speak;
+    EditText total, quantity; // campos de entrada para a quantia total e o número de pessoas
+    TextView result; // texto com o valor do resultado da divisão dos de cima
+    FloatingActionButton share, speak; //botões de compartilhar e falar
 
-    TextToSpeech tts;
-    DecimalFormat money = new DecimalFormat("#.00");
+    TextToSpeech tts; // TTS (conversor de texto em voz)
+    DecimalFormat money = new DecimalFormat("#.00"); // formata para o padrão monetário
 
-    double t = 0.00, q = 2.0, r = 0.00;
-    int req = 1122;
+    double t = 0.00, q = 2.0, r = 0.00; // valor do campo "total", do "quantity", e o resultado
+    int req = 1122; // código para o conversor de texto em voz requisitar dados
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +39,17 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Text
         share = (FloatingActionButton) findViewById(R.id.share);
         speak = (FloatingActionButton) findViewById(R.id.speak);
 
+        // procura pelos dados do conversor (ex.: voz em língua local) no dispositivo
         Intent checkTTS = new Intent();
         checkTTS.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkTTS, req);
 
+        // adiciona listeners para edições dos campos, com o método definido em afterTextChanged
         total.addTextChangedListener(this);
         quantity.addTextChangedListener(this);
 
+        // adiciona listener para os cliques nos botões, com métodos definidos no próprio parâmetro.
+        // Cada botão utiliza uma classe própria em vez de definir a MainActivity como o watcher
         share.setOnClickListener(view -> {
             Intent toShare = new Intent(Intent.ACTION_SEND);
             toShare.setType("text/plain");
@@ -71,13 +75,13 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Text
     @SuppressLint("DefaultLocale")
     @Override
     public void afterTextChanged(Editable editable) {
-        try {
+        try { // tenta converter os textos dos campos "total" e "quantity" em número
             t = Double.parseDouble(total.getText().toString().replace(',', '.'));
             q = Double.parseDouble(quantity.getText().toString());
-        } catch (Exception e) { t = 0.0; }
+        } catch (Exception e) { t = 0.0; } // se houver erro, deixa o valor 0 como padrão
 
         if (q==0.0) Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
-        else {
+        else { // efetua a divisão dos novos valores e a mostra em "result" já formatada
             r = t / q;
             String res = getString(R.string.RS)+" "+money.format(r);
             res = res.replace(" ,", " 0,");
@@ -85,9 +89,10 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Text
         }
     }
 
-    // Sintetizador de Voz
+    // Conversor de Texto em Voz
 
     // se não há dados suficientes para o TTS, instala-os.
+    // Isto é a resolução/continuação da procura feita no onCreate pelo startActivityForResult
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==req) {
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Text
             }
         }
     }
+    // Verifica se obteve sucesso ao conseguir os dados do TTS
     @Override
     public void onInit(int i) {
         if (i==TextToSpeech.SUCCESS)
